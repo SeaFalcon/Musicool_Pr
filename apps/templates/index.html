@@ -1,0 +1,369 @@
+{% extends 'layout.html' %}
+
+{% block article %}
+
+<style>
+#wrap_keyboard   {text-align=center; margin-top:150px;}
+#keyboard {margin:0 auto; width:793px; height:240px;}
+#wrap_footer {text-align=center; margin-top:150px; background-color: gray;}
+#footer { color:white; padding-left: 620px; padding-top: 30px; width:1400px; height: 200px;}
+</style>
+<div id="wrap_keyboard">
+    <div id="keyboard">
+    <button  id="bl_comma" type="button" class="btn btn-danger btn-lg">~ `</button> &nbsp&nbsp&nbsp&nbsp
+    <button id="b1"type="button" class="btn btn-primary btn-lg">1</button>
+    <button id="b2"type="button" class="btn btn-primary btn-lg">2</button>
+    <button id="b3"type="button" class="btn btn-primary btn-lg">3</button>
+    <button id="b4"type="button" class="btn btn-primary btn-lg">4</button>
+    <button id="b5"type="button" class="btn btn-primary btn-lg">5</button>
+    <button id="b6"type="button" class="btn btn-primary btn-lg">6</button>
+    <button id="b7"type="button" class="btn btn-primary btn-lg">7</button>
+    <button id="b8"type="button" class="btn btn-primary btn-lg">8</button>
+    <button id="b9"type="button" class="btn btn-primary btn-lg">9</button>
+    <button id="b0"type="button" class="btn btn-primary btn-lg">0</button>
+    <button id="bminus"type="button" class="btn btn-primary btn-lg">-</button>
+    <button id="bequal"type="button" class="btn btn-primary btn-lg">+</button> &nbsp
+    <button id="bbs"type="button" class="btn btn-default btn-lg">Backspace</button> </br></br>
+    <button id="btab"type="button" class="btn btn-primary btn-lg">T a b</button>
+    <button id="bq"type="button" class="btn btn-primary btn-lg">Q</button>
+    <button id="bw"type="button" class="btn btn-primary btn-lg">W</button>
+    <button id="be"type="button" class="btn btn-primary btn-lg">E</button>
+    <button id="br"type="button" class="btn btn-primary btn-lg">R</button>
+    <button id="bt"type="button" class="btn btn-primary btn-lg">T</button>
+    <button id="by"type="button" class="btn btn-primary btn-lg">Y</button>
+    <button id="bu"type="button" class="btn btn-primary btn-lg">U</button>
+    <button id="bi"type="button" class="btn btn-primary btn-lg">I</button>
+    <button id="bo"type="button" class="btn btn-primary btn-lg">O</button>
+    <button id="bp"type="button" class="btn btn-primary btn-lg">P</button>
+    <button id="bbracket_open"type="button" class="btn btn-primary btn-lg">[{</button>
+    <button id="bbracket_close"type="button" class="btn btn-primary btn-lg">]}</button>
+    <button id="bb_slash"type="button" class="btn btn-primary btn-lg"> \ </button></br></br>
+
+    <button id="bcl"type="button" class="btn btn-info btn-lg">Caps Lock</button>
+    <button id="ba"type="button" class="btn btn-info btn-lg">A</button>
+    <button id="bs"type="button" class="btn btn-info btn-lg">S</button>
+    <button id="bd"type="button" class="btn btn-info btn-lg">D</button>
+    <button id="bf"type="button" class="btn btn-info btn-lg">F</button>
+    <button id="bg"type="button" class="btn btn-info btn-lg">G</button>
+    <button id="bh"type="button" class="btn btn-info btn-lg">H</button>
+    <button id="bj"type="button" class="btn btn-info btn-lg">J</button>
+    <button id="bk"type="button" class="btn btn-info btn-lg">K</button>
+    <button id="bl"type="button" class="btn btn-info btn-lg">L</button>
+    <button id="bsemi_col"type="button" class="btn btn-info btn-lg">:;</button>
+    <button id="bquotion" type="button" class="btn btn-info btn-lg">' "</button>  &nbsp
+    <button id="benter" type="button" class="btn btn-info btn-lg"> ENTER </button></br></br>
+
+    <button id="bsl"type="button" class="btn btn-success btn-lg">Shift L</button>
+    <button id="bz"type="button" class="btn btn-success btn-lg">Z</button>
+    <button id="bx"type="button" class="btn btn-success btn-lg">X</button>
+    <button id="bc"type="button" class="btn btn-success btn-lg">C</button>
+    <button id="bv"type="button" class="btn btn-success btn-lg">V</button>
+    <button id="bb"type="button" class="btn btn-success btn-lg">B</button>
+    <button id="bn"type="button" class="btn btn-success btn-lg">N</button>
+    <button id="bm"type="button" class="btn btn-success btn-lg">M</button>
+    <button id="bspot"type="button" class="btn btn-success btn-lg">,</button>
+    <button id="bdot"type="button" class="btn btn-success btn-lg">.</button>
+    <button id="bslash"type="button" class="btn btn-success btn-lg">/?</button>  &nbsp
+    <button id="bsr"type="button" class="btn btn-success btn-lg"> Shift R </button>
+
+    </div>
+</div>
+
+
+<!-- All JS -->
+
+
+
+<script>
+    $(document).ready(function(){
+
+        ion.sound({
+            sounds: [
+                {name: "beer_can_opening"},
+                {name: "bell_ring"},
+                {name: "kick"},
+                {name: "hihat"},
+                {name: "snare"},
+                {name: "cymbals"},
+                {name: "DO1"},
+                {name: "RE"},
+                {name: "MI"},
+                {name: "FA"},
+                {name: "SOL"},
+                {name: "RA"},
+                {name: "SI"},
+                {name: "DO2"},
+                {name: "edm-bass-loop"},
+                {name: "piano-loop"},
+                {name: "bass_c"},
+                {name: "bass_high_Bb"},
+                {name: "bass_high_f"},
+                {name: "bass_g"}
+
+
+            ],
+            path: "{{url_for('static', filename='sounds/')}}",
+            preload: true,
+            volume: 1.0
+        });
+
+
+
+        $("#bl_comma").on("click", function(){
+             ion.sound.stop("bell_ring");
+                ion.sound.stop("kick");
+                ion.sound.stop("snare");
+                ion.sound.stop("cymbals");
+                ion.sound.stop("hihat");
+                ion.sound.stop("DO1");
+                ion.sound.stop("DO2");
+                ion.sound.stop("RE");
+                ion.sound.stop("MI");
+                ion.sound.stop("FA");
+                ion.sound.stop("SOL");
+                ion.sound.stop("RA");
+                ion.sound.stop("SI");
+                ion.sound.stop("edm-bass-loop");
+                ion.sound.stop("piano-loop");
+                $( "#bl_comma" ).effect( "highlight" );
+
+        });
+
+        $("#bq").on("click", function(){
+            $( "#bq" ).effect( "highlight" );
+            ion.sound.play("kick");
+        });
+        $("#bw").on("click", function(){
+            $( "#bw" ).effect( "highlight" );
+            ion.sound.play("hihat");
+        });
+        $("#be").on("click", function(){
+            $( "#be" ).effect( "highlight" );
+            ion.sound.play("snare");
+        });
+        $("#br").on("click", function(){
+            $( "#br" ).effect( "highlight" );
+            ion.sound.play("cymbals");
+        });
+        $("#b1").on("click", function(){
+            $( "#b1" ).effect( "highlight" );
+            ion.sound.play("DO1");
+        });
+        $("#b2").on("click", function(){
+            $( "#b2" ).effect( "highlight" );
+            ion.sound.play("RE");
+        });
+        $("#b3").on("click", function(){
+            $( "#b3" ).effect( "highlight" );
+            ion.sound.play("MI");
+        });
+        $("#b4").on("click", function(){
+            $( "#b4" ).effect( "highlight" );
+            ion.sound.play("FA");
+        });
+        $("#b5").on("click", function(){
+            $( "#b5" ).effect( "highlight" );
+            ion.sound.play("SOL");
+        });
+        $("#b6").on("click", function(){
+            $( "#b6" ).effect( "highlight" );
+            ion.sound.play("RA");
+        });
+        $("#b7").on("click", function(){
+            $( "#b7" ).effect( "highlight" );
+            ion.sound.play("SI");
+        });
+        $("#b8").on("click", function(){
+            $( "#b8" ).effect( "highlight" );
+            ion.sound.play("DO2");
+        });
+        $("#btab").on("click", function(){
+            $( "#btab" ).effect( "highlight" );
+            ion.sound.play("edm-bass-loop");
+        });
+        $("#bcl").on("click", function(){
+            $( "#bcl" ).effect( "highlight" );
+            ion.sound.play("piano-loop");
+        });
+        $("#bo").on("click", function(){
+            $( "#bo" ).effect( "highlight" );
+            ion.sound.play("bass_c");
+        });
+        $("#bp").on("click", function(){
+            $( "#bp" ).effect( "highlight" );
+            ion.sound.play("bass_high_Bb");
+        });
+        $("#bbracket_open").on("click", function(){
+            $( "#bbracket_open" ).effect( "highlight" );
+            ion.sound.play("bass_high_f");
+        });
+        $("#bbracket_close").on("click", function(){
+            $( "#bbracket_close" ).effect( "highlight" );
+            ion.sound.play("bass_g");
+        });
+        $("#bl_comma").on("click", function(){
+            $( "#bl_comma" ).effect( "highlight" );
+                ion.sound.stop("bell_ring");
+                ion.sound.stop("kick");
+                ion.sound.stop("snare");
+                ion.sound.stop("cymbals");
+                ion.sound.stop("hihat");
+                ion.sound.stop("DO1");
+                ion.sound.stop("DO2");
+                ion.sound.stop("RE");
+                ion.sound.stop("MI");
+                ion.sound.stop("FA");
+                ion.sound.stop("SOL");
+                ion.sound.stop("RA");
+                ion.sound.stop("SI");
+                ion.sound.stop("edm-bass-loop");
+                ion.sound.stop("piano-loop");
+                $( "#bl_comma" ).effect( "highlight" );
+        });
+
+
+        $(document).keydown(function(keyevent) {
+        var keycode = parseInt(keyevent.which,10);
+
+        console.log(keycode);
+        switch(parseInt(keyevent.which,10)) {
+
+            case 81:
+                ion.sound.play("kick");
+                $( "#bq" ).effect( "highlight" );
+                break;
+
+            case 87:
+                ion.sound.play("hihat");
+                $( "#bw" ).effect( "highlight" );
+                break;
+
+            case 69:
+                ion.sound.play("snare");
+                $( "#be" ).effect( "highlight" );
+                break;
+
+            case 82:
+                ion.sound.play("cymbals");
+                $( "#br" ).effect( "highlight" );
+                break;
+
+            case 49:
+                ion.sound.play("DO1");
+                $( "#b1" ).effect( "highlight" );
+                break;
+
+            case 50:
+                ion.sound.play("RE");
+                $( "#b2" ).effect( "highlight" );
+                break;
+
+            case 51:
+                ion.sound.play("MI");
+                $( "#b3" ).effect( "highlight" );
+                break;
+
+            case 52:
+                ion.sound.play("FA");
+                $( "#b4" ).effect( "highlight" );
+                break;
+            case 53:
+                ion.sound.play("SOL");
+                $( "#b5" ).effect( "highlight" );
+                break;
+
+            case 54:
+                ion.sound.play("RA");
+                $( "#b6" ).effect( "highlight" );
+                break;
+
+            case 55:
+                ion.sound.play("SI");
+                $( "#b7" ).effect( "highlight" );
+                break;
+
+            case 56:
+                ion.sound.play("DO2");
+                $( "#b8" ).effect( "highlight" );
+                break;
+            case 9:
+                if(!ion.sound.isPlaying("edm-bass-loop")) {
+                    ion.sound.play("edm-bass-loop", {
+                        loop: false
+                      });
+                   }
+
+
+                $( "#btap" ).effect( "highlight" );
+                break;
+            case 20:
+                if(!ion.sound.isPlaying("piano-loop")) {
+                    ion.sound.play("piano-loop", {
+                        loop: false
+                       });
+                    }
+
+                $( "#bcl" ).effect( "highlight" );
+                break;
+            case 79:
+                ion.sound.play("bass_c");
+                $( "#bo" ).effect( "highlight" );
+                break;
+            case 80:
+                ion.sound.play("bass_high_Bb");
+                $( "#bp" ).effect( "highlight" );
+                break;
+            case 219:
+                ion.sound.play("bass_high_f");
+                $( "#bbracket_open" ).effect( "highlight" );
+                break;
+            case 221:
+                ion.sound.play("bass_g");
+                $( "#bbracket_close" ).effect( "highlight" );
+                break;
+
+        }
+
+        });
+        $(document).keyup(function(keyevent) {
+            if ( keyevent.which == 192 ) {
+
+                ion.sound.stop("bell_ring");
+                ion.sound.stop("kick");
+                ion.sound.stop("snare");
+                ion.sound.stop("cymbals");
+                ion.sound.stop("hihat");
+                ion.sound.stop("DO1");
+                ion.sound.stop("DO2");
+                ion.sound.stop("RE");
+                ion.sound.stop("MI");
+                ion.sound.stop("FA");
+                ion.sound.stop("SOL");
+                ion.sound.stop("RA");
+                ion.sound.stop("SI");
+                $( "#bl_comma" ).effect( "highlight" );
+
+                }
+         });
+        $(document).keyup(function(keyevent) {
+            if ( keyevent.which == 9 ) {
+
+                ion.sound.stop("edm-bass-loop");
+            }
+        });
+        $(document).keyup(function(keyevent) {
+            if ( keyevent.which == 20 ) {
+
+                ion.sound.stop("piano-loop");
+            }
+        });
+
+
+
+
+});
+
+
+</script>
+
+{% endblock %}
