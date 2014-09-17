@@ -1,4 +1,0 @@
-Musicool_Pr
-===========
-
-MusiCoolTeam
