@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html  lang="ko">
+<head>
+        <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/font-awesome.css')}}" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"  type="text/css" media="screen" title="no title" charset="utf-8">
+    <meta charset="UTF-8">
+    <title>Musicool 회원가입</title>
+</head>
+<body>
+    
+
+    <div class="llArticleCreate">
+        <form role="form" method="post">
+            {{ form.hidden_tag() }} <!--관용적이래-->
+
+            {% if form.errors %} <!--만약 에러가 있으면 form.errors가 True반환-->
+                <div class="alert alert-danger fade in">
+                    <a class="close" data-dismiss="alert" href="#">&times;</a>
+                    {% for field, errors in form.errors.items() %}
+                        <ul>
+                            {% for error in errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </ul>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% from "_form_field.html" import render_field %}
+            {% for field in form if field.widget.input_type != 'hidden' %}
+                {{ render_field(field, class="form-control") }}
+            {% endfor %}
+
+            <button type="submit" class="btn btn-default">회원가입</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -10,7 +10,7 @@
 	<meta name="author" content="Park hk"/>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}"  type="text/css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}"  type="text/css" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" href="{{url_for('static',filename='css/font-awesome.css')}}"  type="text/css" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"  type="text/css" media="screen" title="no title" charset="utf-8">
 
@@ -74,7 +74,16 @@
                     <li><a href="#">관련사이트</a></li>
                   </ul>
                 </li>
+
               </ul>
+                <ul class="nav navbar-nav" style="float:right;">
+                  {% if g.user_email==None %}<li class='login_link'><a href="{{url_for('login')}}" >로그인</a></li>
+                  <li class='login_link'><a href="{{url_for('user_join')}}">회원가입</a></li>
+                  {% else %}
+                    <li class='login_link'><a href="#">{{g.user_nick}}님 안녕하세요!</a> </li>
+                    <li class="login_link"><a href="{{url_for('log_out')}}">로그아웃</a></li>
+                  {%endif%}
+                </ul>
             </div>
           </div>
         </div>
@@ -94,10 +103,10 @@
       </ol>
       <div class="carousel-inner">
         <div class="item active">
-          <img src="http://cfile239.uf.daum.net/image/235C903B52C6202633166E" alt="First slide">
+          <img src="http://cfile26.uf.tistory.com/image/0308D34451A5CC4708EE3C" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <strong><h1>Musicool.Com</h1></strong>
+              <strong><h1>Musicool.Com</h1></font></strong>
               <p>음악 만드는 사이트♥</p>
               <p><a class="btn btn-lg btn-primary" href="#" role="button">Musicool 가이드</a></p>
             </div>

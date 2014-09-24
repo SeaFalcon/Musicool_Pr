@@ -8,7 +8,7 @@
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
     <script src="{{url_for('static',filename= 'js/ion.sound.js')}}"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='css/font-awesome.css')}}" type="text/css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"  type="text/css" media="screen" title="no title" charset="utf-8">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -35,9 +35,9 @@
     {% block navbar %}
         {% include "nav/navbar.html" %} <!-- extends is part insert but. include is all insert -->
     {% endblock %} 
-
+    <div>
     {% block article %}{% endblock %}
-
+    </div>
 
 
 

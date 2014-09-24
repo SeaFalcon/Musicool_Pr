@@ -4,25 +4,25 @@
 
 <style>
 #wrap_keyboard   {text-align=center; margin-top:150px;}
-#keyboard {margin:0 auto; width:793px; height:240px;}
+#keyboard {margin:0 auto; width:850px; height:350px;}
 #wrap_footer {text-align=center; margin-top:150px; background-color: gray;}
 #footer { color:white; padding-left: 620px; padding-top: 30px; width:1400px; height: 200px;}
 </style>
 <div id="wrap_keyboard">
     <div id="keyboard">
-    <button  id="bl_comma" type="button" class="btn btn-danger btn-lg">~ `</button> &nbsp&nbsp&nbsp&nbsp
-    <button id="b1"type="button" class="btn btn-primary btn-lg">1</button>
-    <button id="b2"type="button" class="btn btn-primary btn-lg">2</button>
-    <button id="b3"type="button" class="btn btn-primary btn-lg">3</button>
-    <button id="b4"type="button" class="btn btn-primary btn-lg">4</button>
-    <button id="b5"type="button" class="btn btn-primary btn-lg">5</button>
-    <button id="b6"type="button" class="btn btn-primary btn-lg">6</button>
-    <button id="b7"type="button" class="btn btn-primary btn-lg">7</button>
-    <button id="b8"type="button" class="btn btn-primary btn-lg">8</button>
-    <button id="b9"type="button" class="btn btn-primary btn-lg">9</button>
-    <button id="b0"type="button" class="btn btn-primary btn-lg">0</button>
+    <button  id="bl_comma" type="button" class="btn btn-danger btn-lg">~ `</button>&nbsp&nbsp
+    <button id="b1"type="button" class="btn btn-default btn-lg"><strong> 1 </strong></button>
+    <button id="b2"type="button" class="btn btn-default btn-lg"><strong> 2 </strong></button>
+    <button id="b3"type="button" class="btn btn-default btn-lg"><strong> 3 </strong></button>
+    <button id="b4"type="button" class="btn btn-default btn-lg"><strong> 4 </strong></button>
+    <button id="b5"type="button" class="btn btn-default btn-lg"><strong> 5 </strong></button>
+    <button id="b6"type="button" class="btn btn-default btn-lg"><strong> 6 </strong></button>
+    <button id="b7"type="button" class="btn btn-default btn-lg"><strong> 7 </strong></button>
+    <button id="b8"type="button" class="btn btn-default btn-lg"><strong> 8 </strong></button>
+    <button id="b9"type="button" class="btn btn-default btn-lg"><strong> 9 </strong></button>
+    <button id="b0"type="button" class="btn btn-default btn-lg"><strong> 0 </strong></button>
     <button id="bminus"type="button" class="btn btn-primary btn-lg">-</button>
-    <button id="bequal"type="button" class="btn btn-primary btn-lg">+</button> &nbsp
+    <button id="bequal"type="button" class="btn btn-primary btn-lg">+</button>&nbsp
     <button id="bbs"type="button" class="btn btn-default btn-lg">Backspace</button> </br></br>
     <button id="btab"type="button" class="btn btn-primary btn-lg">T a b</button>
     <button id="bq"type="button" class="btn btn-primary btn-lg">Q</button>
@@ -64,7 +64,19 @@
     <button id="bspot"type="button" class="btn btn-success btn-lg">,</button>
     <button id="bdot"type="button" class="btn btn-success btn-lg">.</button>
     <button id="bslash"type="button" class="btn btn-success btn-lg">/?</button>  &nbsp
-    <button id="bsr"type="button" class="btn btn-success btn-lg"> Shift R </button>
+    <button id="bsr"type="button" class="btn btn-success btn-lg"> Shift R </button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <button id="barrow-up"type="button" class="btn btn-danger btn-lg"> <strong>&nbsp↑&nbsp</strong> </button> </br></br>
+
+    <button id="bctrl"type="button" class="btn btn-warning btn-lg">&nbspCtrl&nbsp</button>&nbsp
+    <button id="balt"type="button" class="btn btn-warning btn-lg">&nbspAlt&nbsp</button>&nbsp
+    <button id="bsb"type="button" class="btn btn-warning btn-lg">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSpace Bar&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>&nbsp
+    <button id="bhy"type="button" class="btn btn-warning btn-lg">한/영</button>&nbsp
+    <button id="bhj"type="button" class="btn btn-warning btn-lg">한자</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <button id="barrow-left"type="button" class="btn btn-danger btn-lg"><strong> ←</strong> </button>
+    <button id="barrow-down"type="button" class="btn btn-danger btn-lg"><strong> &nbsp↓&nbsp</strong> </button>
+    <button id="barrow-right"type="button" class="btn btn-danger btn-lg"> <strong>→</strong> </button>
+
+    
 
     </div>
 </div>
@@ -79,8 +91,6 @@
 
         ion.sound({
             sounds: [
-                {name: "beer_can_opening"},
-                {name: "bell_ring"},
                 {name: "kick"},
                 {name: "hihat"},
                 {name: "snare"},
@@ -95,10 +105,14 @@
                 {name: "DO2"},
                 {name: "edm-bass-loop"},
                 {name: "piano-loop"},
-                {name: "bass_c"},
-                {name: "bass_high_Bb"},
-                {name: "bass_high_f"},
-                {name: "bass_g"}
+                {name: "kick2"},
+                {name: "kick3"},
+                {name: "kick4"},
+                {name: "hihat2"},
+                {name: "hihat3"},
+                {name: "hihat4"},
+                {name: "snare2"},
+                {name: "snare3"}     
 
 
             ],
@@ -125,6 +139,14 @@
                 ion.sound.stop("SI");
                 ion.sound.stop("edm-bass-loop");
                 ion.sound.stop("piano-loop");
+                ion.sound.stop("kick2");
+                ion.sound.stop("kick3");
+                ion.sound.stop("kick4");
+                ion.sound.stop("snare2");
+                ion.sound.stop("snare3");
+                ion.sound.stop("hihat2");
+                ion.sound.stop("hihat3");
+                ion.sound.stop("hihat4");
                 $( "#bl_comma" ).effect( "highlight" );
 
         });
@@ -228,26 +250,6 @@
         console.log(keycode);
         switch(parseInt(keyevent.which,10)) {
 
-            case 81:
-                ion.sound.play("kick");
-                $( "#bq" ).effect( "highlight" );
-                break;
-
-            case 87:
-                ion.sound.play("hihat");
-                $( "#bw" ).effect( "highlight" );
-                break;
-
-            case 69:
-                ion.sound.play("snare");
-                $( "#be" ).effect( "highlight" );
-                break;
-
-            case 82:
-                ion.sound.play("cymbals");
-                $( "#br" ).effect( "highlight" );
-                break;
-
             case 49:
                 ion.sound.play("DO1");
                 $( "#b1" ).effect( "highlight" );
@@ -305,22 +307,172 @@
 
                 $( "#bcl" ).effect( "highlight" );
                 break;
-            case 79:
-                ion.sound.play("bass_c");
-                $( "#bo" ).effect( "highlight" );
+            case 81:
+                ion.sound.play("kick");
+                $( "#bq" ).effect( "highlight" );
                 break;
-            case 80:
-                ion.sound.play("bass_high_Bb");
-                $( "#bp" ).effect( "highlight" );
+            case 87:
+                ion.sound.play("kick2");
+                $( "#bw" ).effect( "highlight" );
                 break;
-            case 219:
-                ion.sound.play("bass_high_f");
-                $( "#bbracket_open" ).effect( "highlight" );
+            case 69:
+                ion.sound.play("hihat3");
+                $( "#be" ).effect( "highlight" );
                 break;
-            case 221:
-                ion.sound.play("bass_g");
-                $( "#bbracket_close" ).effect( "highlight" );
+            case 82:
+                ion.sound.play("snare2");
+                $( "#br" ).effect( "highlight" );
                 break;
+            // case 84:
+            //     ion.sound.play("kick");
+            //     $( "#bt" ).effect( "highlight" );
+            //     break;
+
+            // case 89:
+            //     ion.sound.play("kick2");
+            //     $( "#bw" ).effect( "highlight" );
+            //     break;
+
+            // case 85:
+            //     ion.sound.play("hihat3");
+            //     $( "#be" ).effect( "highlight" );
+            //     break;
+
+            // case 73:
+            //     ion.sound.play("snare2");
+            //     $( "#br" ).effect( "highlight" );
+            //     break;
+            //  case 79:
+            //      ion.sound.play("kick");
+            //      $( "#bq" ).effect( "highlight" );
+            //      break;
+
+            //  case 80:
+            //      ion.sound.play("hihat");
+            //      $( "#bw" ).effect( "highlight" );
+            //      break;
+
+            //  case 219:
+            //      ion.sound.play("snare");
+            //      $( "#be" ).effect( "highlight" );
+            //      break;
+
+            //  case 221:
+            //      ion.sound.play("cymbals");
+            //     $( "#br" ).effect( "highlight" );
+            //      break;
+            //  case 220:
+            //      ion.sound.play("kick");
+            //      $( "#bq" ).effect( "highlight" );
+            //      break;
+
+            case 65:
+                ion.sound.play("kick3");
+                $( "#ba" ).effect( "highlight" );
+                break;
+
+            case 83:
+                ion.sound.play("hihat");
+                $( "#bs" ).effect( "highlight" );
+                break;
+
+            case 68:
+                ion.sound.play("hihat4");
+                $( "#bd" ).effect( "highlight" );
+                break;
+            case 70:
+                ion.sound.play("snare3");
+                $( "#bf" ).effect( "highlight" );
+                break;
+
+            // case 71:
+            //     ion.sound.play("hihat");
+            //     $( "#bg" ).effect( "highlight" );
+            //     break;
+
+            // case 72:
+            //     ion.sound.play("snare");
+            //     $( "#be" ).effect( "highlight" );
+            //     break;
+
+            // case 74:
+            //     ion.sound.play("cymbals");
+            //     $( "#br" ).effect( "highlight" );
+            //     break;
+            // case 75:
+            //     ion.sound.play("kick");
+            //     $( "#bq" ).effect( "highlight" );
+            //     break;
+
+            // case 76:
+            //     ion.sound.play("hihat");
+            //     $( "#bw" ).effect( "highlight" );
+            //     break;
+
+            // case 186:
+            //     ion.sound.play("snare");
+            //     $( "#be" ).effect( "highlight" );
+            //     break;
+
+            // case 222:
+            //     ion.sound.play("cymbals");
+            //     $( "#br" ).effect( "highlight" );
+            //     break;
+            // case 13:
+            //     ion.sound.play("kick");
+            //     $( "#bq" ).effect( "highlight" );
+            //     break;
+
+            case 90:
+                ion.sound.play("kick4");
+                $( "#bz" ).effect( "highlight" );
+                break;
+
+            case 88:
+                ion.sound.play("hihat2");
+                $( "#bx" ).effect( "highlight" );
+                break;
+
+            case 67:
+                ion.sound.play("snare");
+                $( "#bc" ).effect( "highlight" );
+                break;
+            case 86:
+                ion.sound.play("cymbals");
+                $( "#bv" ).effect( "highlight" );
+                break;
+
+            // case 78:
+            //     ion.sound.play("hihat");
+            //     $( "#bw" ).effect( "highlight" );
+            //     break;
+
+            // case 77:
+            //     ion.sound.play("snare");
+            //     $( "#be" ).effect( "highlight" );
+            //     break;
+
+            // case 188:
+            //     ion.sound.play("cymbals");
+            //     $( "#br" ).effect( "highlight" );
+            //     break;
+            // case 190:
+            //     ion.sound.play("kick");
+            //     $( "#bq" ).effect( "highlight" );
+            //     break;
+
+            // case 191:
+            //     ion.sound.play("hihat");
+            //     $( "#bw" ).effect( "highlight" );
+            //     break;
+
+            // case 16:
+            //     ion.sound.play("snare");
+            //     $( "#be" ).effect( "highlight" );
+            //     break;
+
+            
+
 
         }
 
